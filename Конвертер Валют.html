@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер Валют</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="converter-card">
+            <div class="header">
+                <h1><i class="fas fa-exchange-alt"></i> Конвертер Валют</h1>
+                <p class="subtitle">Конвертуйте валюти з реальними курсами</p>
+            </div>
+
+            <div class="converter-content">
+                <!-- Перша валюта -->
+                <div class="currency-box">
+                    <label for="fromCurrency">З валюти:</label>
+                    <div class="input-group">
+                        <input 
+                            type="number" 
+                            id="amount" 
+                            placeholder="Введіть суму" 
+                            value="1"
+                            min="0"
+                        >
+                        <select id="fromCurrency" class="currency-select">
+                            <option value="USD">USD - Долар США</option>
+                            <option value="EUR">EUR - Євро</option>
+                            <option value="UAH" selected>UAH - Гривня</option>
+                            <option value="GBP">GBP - Фунт</option>
+                            <option value="JPY">JPY - Єна</option>
+                            <option value="CHF">CHF - Франк</option>
+                            <option value="CAD">CAD - Канадський долар</option>
+                            <option value="AUD">AUD - Австралійський долар</option>
+                            <option value="CNY">CNY - Китайський юань</option>
+                            <option value="INR">INR - Індійська рупія</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Кнопка обміну -->
+                <button class="swap-btn" id="swapBtn" title="Поміняти валюти">
+                    <i class="fas fa-arrows-alt-h"></i>
+                </button>
+
+                <!-- Друга валюта -->
+                <div class="currency-box">
+                    <label for="toCurrency">На валюту:</label>
+                    <div class="input-group">
+                        <input 
+                            type="number" 
+                            id="result" 
+                            placeholder="Результат" 
+                            readonly
+                        >
+                        <select id="toCurrency" class="currency-select">
+                            <option value="USD">USD - Долар США</option>
+                            <option value="EUR">EUR - Євро</option>
+                            <option value="UAH">UAH - Гривня</option>
+                            <option value="GBP">GBP - Фунт</option>
+                            <option value="JPY">JPY - Єна</option>
+                            <option value="CHF">CHF - Франк</option>
+                            <option value="CAD">CAD - Канадський долар</option>
+                            <option value="AUD">AUD - Австралійський долар</option>
+                            <option value="CNY">CNY - Китайський юань</option>
+                            <option value="INR" selected>INR - Індійська рупія</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Інформація про курс -->
+            <div class="exchange-info">
+                <p id="exchangeRate" class="exchange-rate">
+                    <i class="fas fa-info-circle"></i> Завантаження курсів...
+                </p>
+                <p class="last-update">
+                    <small>Курси оновлюються кожні 30 хвилин</small>
+                </p>
+            </div>
+
+            <!-- Популярні конвертації -->
+            <div class="popular-conversions">
+                <h3>Популярні конвертації</h3>
+                <div class="quick-buttons" id="quickButtons">
+                    <!-- Динамічно генеруються -->
+                </div>
+            </div>
+
+            <!-- Історія -->
+            <div class="history-section">
+                <h3>Історія конвертацій</h3>
+                <div class="history-list" id="historyList">
+                    <p class="no-history">Історія порожня</p>
+                </div>
+                <button class="clear-history-btn" id="clearHistoryBtn">
+                    <i class="fas fa-trash"></i> Очистити історію
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Конвертер Валют. Всі права захищені. | <a href="#">Умови використання</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
